@@ -15,7 +15,7 @@ const homeController = require('../controllers/home_controller');
 
 router.get('/',homeController.home);
 
-router.use('/user',require('./users'));
+router.use('/users',require('./users'));
 
 router.use('/info',require('./details'));
 
@@ -23,7 +23,7 @@ router.use('/info',require('./details'));
 
 //Assignment
 
-router.get('/signup',homeController.signup);
+// router.get('/signup',homeController.signup);
 
 //for any further routes Access from here
 //router.use('/routerName',require(./routerFile));
