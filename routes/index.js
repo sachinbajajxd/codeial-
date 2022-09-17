@@ -15,8 +15,17 @@ const homeController = require('../controllers/home_controller');
 
 router.get('/',homeController.home);
 
-router.get('/practice',homeController.practice);
+router.use('/user',require('./users'));
 
-router.get('/about',homeController.about);
+router.use('/info',require('./details'));
+
+
+
+//Assignment
+
+router.get('/signup',homeController.signup);
+
+//for any further routes Access from here
+//router.use('/routerName',require(./routerFile));
 
 module.exports = router;
