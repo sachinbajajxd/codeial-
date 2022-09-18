@@ -3,19 +3,41 @@ const User = require('../models/user');
 
 module.exports.profile = function(req,res){
 
-    // return res.end('<h1>Users Profile</h1>');
-    return res.render('user_profile',{
-        title:'Home'
-    });
+    if(req.cookies.user_id){
+
+        User.findById(req.cookies.user_id, function(err,user){
+
+            if(user){
+
+
+                return res.render('user_profile',{
+                    title: "User Profile",
+                    user: user
+
+                });
+
+
+            }else{
+                return res.redirect('/users/sign-in');
+            }
+
+        });
+
+
+    }else{
+        return res.redirect('/users/sign-in');
+    }
+    
 
 };
 
-// Assignment
-// module.exports.about = function(req,res){
+module.exports.deleteCookie = function(req,res){
 
-//     return res.end('<h1>About us</h1>')
+    res.cookie('user_id',"")
+    return res.redirect('/users/sign-in');
 
-// }
+};
+
 
 module.exports.sign_up = function(req,res){
     return res.render('sign-up',{
