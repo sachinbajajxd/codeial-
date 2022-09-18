@@ -17,7 +17,7 @@ router.get('/',homeController.home);
 
 router.use('/users',require('./users'));
 
-router.use('/info',require('./details'));
+// router.use('/info',require('./details'));
 
 
 
