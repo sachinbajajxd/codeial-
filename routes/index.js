@@ -19,15 +19,6 @@ router.use('/users',require('./users'));
 
 router.use('/posts',require('./posts'));
 
-// router.use('/info',require('./details'));
-
-
-
-//Assignment
-
-// router.get('/signup',homeController.signup);
-
-//for any further routes Access from here
-//router.use('/routerName',require(./routerFile));
+router.use('/comments', require('./comments'));
 
 module.exports = router;
