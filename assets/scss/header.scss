@@ -1,0 +1,29 @@
+header
+{
+    font-family: sans-serif;
+    background-color: dodgerblue;
+    position:fixed;
+    color: white;
+    top:0%;
+    height: 2.5vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a
+    {
+        color: white;
+        text-decoration: none;
+    }
+    #left
+    {
+        margin-left: 0.5vw;
+        font-weight: bold;
+        font-size: 1.9vw;
+    }
+    #right
+    {
+        margin-right: 0.5vw;
+        font-size: 1.4vw;
+    }
+}
