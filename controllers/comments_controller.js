@@ -47,6 +47,7 @@ module.exports.destroy = async function(req,res){
             req.flash('success', 'Comment Deleted')
             return res.redirect('back');
         }else{
+            console.log('Error', err);
             req.flash('success', 'You are not allowed to delete this comment');
             return res.redirect('back');
         }
