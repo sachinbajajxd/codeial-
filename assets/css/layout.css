@@ -3,3 +3,5 @@ body {
   /* text-align: center; */ }
   body #layout-main {
     height: 100vh; }
+  body #flash-msg {
+    margin-top: 5%; }
