@@ -5,8 +5,8 @@
         let newPostForm = $('#new-post-form');
 
 
-        newPostForm.submit(function(event){
-            event.preventDefault();
+        newPostForm.submit(function(e){
+            e.preventDefault();
 
             $.ajax({
                 type: 'post',
@@ -16,6 +16,18 @@
                     let newPost = newPostDom(data.data.post);
                     $('#posts-list-container>ul').prepend(newPost); 
                     deletePost($(' .delete-post-button', newPost));
+
+                    // 
+                    new PostComments(data.data.post._id);
+
+                    new Noty({
+                        theme: 'relax',
+                        text: "Post published!",
+                        type: 'success',
+                        layout: 'topRight',
+                        timeout: 1500
+                        
+                    }).show();
                 },
                 error: function(error){
                     console.log(error.responseText);
@@ -44,7 +56,7 @@
                 
                     <div class="post-comments">
                 
-                            <form action="/comments/create" method="POST">
+                            <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST">
                 
                                 <input type="text" name="content" placeholder="Add Comment" required>
                 
@@ -70,18 +82,37 @@
 
 
 
+     // method to iterate over all post  delete button
+     let iterate_post=function(){
+        var loop=$(' .delete-post-button');
+        for(i of loop){
+            deletePost(i);
+        }
+    }
+                  
 
     // Method to delete a post from DOM
+    //deleteLink contains 'a' tag
     let deletePost = function(deleteLink){
 
-        $(deleteLink).click(function(event){
-            event.preventDefault();
+        $(deleteLink).click(function(e){
+            e.preventDefault();
 
             $.ajax({
                 type: 'get',
                 url: $(deleteLink).prop('href'),
                 success: function(data){
                     $(`#post-${data.data.post_id}`).remove();
+
+                    new Noty({
+                        theme: 'relax',
+                        text: "Post Deleted",
+                        type: 'success',
+                        layout: 'topRight',
+                        timeout: 1500
+                        
+                    }).show();
+
                 },
                 error: function(error){
                     console.log(error.responseText);
@@ -91,6 +122,19 @@
 
     }
 
-    createPost();
+    // let convertPostsToAjax = function(){
+    //     $('#posts-list-container>ul>li').each(function(){
+    //         let self = $(this);
+    //         let deleteButton = $(' .delete-post-button', self);
+    //         deletePost(deleteButton);
 
+    //         // get the post's id by splitting the id attribute
+    //         let postId = self.prop('id').split("-")[1]
+    //         new PostComments(postId);
+    //     });
+    // }
+
+    createPost();
+    iterate_post();
+    // convertPostsToAjax();
 }
