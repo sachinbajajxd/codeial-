@@ -22,7 +22,7 @@ exports.newComment = (comment) =>{
             return;
         }
 
-        console.log('Message Sent', info);
+        // console.log('Message Sent', info);
         return;
     });
 
