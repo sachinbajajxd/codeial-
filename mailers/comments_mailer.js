@@ -5,15 +5,16 @@ const nodeMailer=require('../config/nodemailer');
 //This is another way of exporting
 exports.newComment = (comment) =>{
 
-    console.log('Inside new Comment mailer', comment);
-    console.log(comment.user.email);
+    // console.log('Inside new Comment mailer', comment);
+    // console.log(comment.user.email);
+    let htmlString = nodeMailer.renderTemplate({comment: comment}, '/comments/new_comment.ejs');
 
     nodeMailer.transporter.sendMail({
 
         from: 'sachinBajajCodeial@gmail.com', // sender address
         to: comment.user.email, // list of receivers
         subject: 'New Comment Published', // Subject line
-        html: "<b>Yup, your comment is published!</b>", // html body
+        html: htmlString,
 
     }, (err, info) => {
         if(err){
