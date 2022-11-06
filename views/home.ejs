@@ -1,6 +1,17 @@
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/chat_box.css">
 
 <div id="home-container">
+
+    
+        <% if(locals.user){%>
+
+            <section id="left-side">
+                User profile picture
+            </section>
+            
+            
+        <%}%>
 
     <section id="feed-posts">
 
@@ -49,6 +60,8 @@
 
         </section>
 
+        <%- include('_chat_box') -%>
+
     <% } %>
     
 
@@ -63,3 +76,14 @@
         let toggleLike=new ToggleLike(self);
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script> 
+<!-- chat_engine.js will be communicating client side  -->
+<!-- chat_sockets.js will be the observer -->
+<% if(locals.user){ %>
+    <script>
+        new ChatEngine('user-chat-box', '<%= locals.user.email %>');
+    </script>
+<% } %>
+
+
