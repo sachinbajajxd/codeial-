@@ -1,0 +1,4 @@
+::1 - - [08/Nov/2022:11:37:53 +0000] "GET /users/profile/636a21362b0a39d16e10f9b8 HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+::1 - - [08/Nov/2022:11:37:57 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/profile/636a21362b0a39d16e10f9b8" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+::1 - - [08/Nov/2022:11:38:08 +0000] "GET /users/sign-out HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+::1 - - [08/Nov/2022:11:38:08 +0000] "GET / HTTP/1.1" 200 4251 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
