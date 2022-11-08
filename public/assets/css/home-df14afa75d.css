@@ -1,0 +1,15 @@
+#home-container {
+  display: flex; }
+  #home-container #left-side {
+    width: 20%;
+    border-right: 2px solid black; }
+  #home-container #feed-posts {
+    width: 55%;
+    padding: 10px; }
+  #home-container #user-friends {
+    width: 25%;
+    padding: 10px;
+    border-left: 2px solid gray;
+    min-height: 100vh;
+    background-color: beige;
+    overflow-y: scroll; }
