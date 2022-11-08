@@ -1,8 +1,9 @@
 #home-container{
     display: flex;
+    // border-left: 2px solid black;
     #left-side{
         width:20%;
-        border-right: 2px solid black
+        border-right: 2px solid black;
     }
 
     #feed-posts{
@@ -13,7 +14,9 @@
         width:25%;
         padding: 10px;
         border-left: 2px solid gray;
-        // height: 100%;
+        // height: ;
+        min-height: 100vh;
         background-color: beige;
+        overflow-y: scroll;
     }
 }

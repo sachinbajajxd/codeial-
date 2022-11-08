@@ -101,4 +101,5 @@ app.listen(port,function(err){
     console.log(`Server is up and running on port : ${port}`);
 });
 
-console.log(process.env.Codeial_key);
+// console.log(process.env);
+

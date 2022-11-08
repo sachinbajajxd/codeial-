@@ -10,4 +10,6 @@
     width: 25%;
     padding: 10px;
     border-left: 2px solid gray;
-    background-color: beige; }
+    min-height: 100vh;
+    background-color: beige;
+    overflow-y: scroll; }
